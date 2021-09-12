@@ -6,7 +6,7 @@ CONFDIR=/etc
 endif
 
 install:
-	install -v -m 644 simple-kmod-lib.sh $(DESTDIR)/lib/kvc/
-	install -v -m 644 simple-kmod.conf $(CONFDIR)/kvc/
-	install -v -m 755 simple-kmod-wrapper.sh $(DESTDIR)/lib/kvc/
-	ln -sf ../lib/kvc/simple-kmod-wrapper.sh $(DESTDIR)/bin/spkut
+	mkdir -p /usr/lib/kvc/ && mkdir -p /etc/kvc/
+	install -v -m 644 ice-kmod-lib.sh $(DESTDIR)/lib/kvc/
+	install -v -m 644 ice-kmod.conf $(CONFDIR)/kvc/
+	install -v -m 755 ice-kmod-wrapper.sh $(DESTDIR)/lib/kvc/
