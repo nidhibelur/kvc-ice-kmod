@@ -121,10 +121,8 @@ build_kmods() {
 load_kmods() {
     echo "Loading kernel modules using the kernel module container..."
     for module in ${KMOD_NAMES}; do
-        if is_kmod_loaded ${module}; then
-            echo "Kernel module ${module} already loaded"
-        else
             module=${module//-/_} # replace any dashes with underscore
+            kvc_c_run --privileged "$IMAGE" rmmod "${module}"
             kvc_c_run --privileged "$IMAGE" modprobe "${module}" 
         fi
     done
