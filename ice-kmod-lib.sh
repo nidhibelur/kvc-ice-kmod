@@ -121,10 +121,9 @@ build_kmods() {
 load_kmods() {
     echo "Loading kernel modules using the kernel module container..."
     for module in ${KMOD_NAMES}; do
-            module=${module//-/_} # replace any dashes with underscore
-            kvc_c_run --privileged "$IMAGE" rmmod "${module}"
-            kvc_c_run --privileged "$IMAGE" modprobe "${module}" 
-        fi
+        module=${module//-/_} # replace any dashes with underscore
+        kvc_c_run --privileged "$IMAGE" rmmod "${module}"
+        kvc_c_run --privileged "$IMAGE" modprobe "${module}" 
     done
 }
 
