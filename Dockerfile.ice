@@ -1,4 +1,4 @@
-FROM quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:1aa3d1eaae7847eb426267e7cce8d780827508812aa8ee31b73703a4902c8c45
+FROM quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:bb5c296b4a6125f475906f457cdf2ffd35d3d70d
 
 WORKDIR /build/
 
